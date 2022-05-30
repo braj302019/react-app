@@ -9,7 +9,7 @@ class ShoppingList extends React.Component {
             <div className="shopping-list">
                 <h1>Shopping List for {name}</h1>
                 <ul style={{listStyleType: "none"}}>
-                    {React.Children.map(items, (value, index) => <li key={'item-' + index}>{index + 1}. {value}</li>)}
+                    {items.map((value, index) => <li key={'item-' + index}>{index + 1}. {value}</li>)}
                 </ul>
             </div>
         );

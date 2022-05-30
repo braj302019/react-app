@@ -3,11 +3,13 @@ import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 
 import './App.css';
 import logo from './logo.svg';
+import Microphone from './pages/microphone/microphone';
 
-const Home = lazy(() => import('./home/Home'));
-const ShoppingList = lazy(() => import('./shopping-list/ShoppingList'));
-const Game = lazy(() => import('./tic-tac-toc/Game'));
-const Clock = lazy(() => import('./clock/Clock'));
+const Home = lazy(() => import('./pages/home/Home'));
+const ShoppingList = lazy(() => import('./pages/shopping-list/ShoppingList'));
+const Game = lazy(() => import('./pages/tic-tac-toc/Game'));
+const Clock = lazy(() => import('./pages/clock/Clock'));
+const Widgets = lazy(() => import('./pages/widgets/Widgets'));
 
 export default function App() {
   return (
@@ -27,6 +29,12 @@ export default function App() {
             <li>
               <Link to="/clock">Clock</Link>
             </li>
+            <li>
+              <Link to="/widgets">Widgets</Link>
+            </li>
+            <li>
+              <Link to="/microphone">Microphone</Link>
+            </li>
           </ul>
         </nav>
         <div className="main">
@@ -36,6 +44,8 @@ export default function App() {
               <Route path="/shopping-list" element={<ShoppingList name="Me" />}></Route>
               <Route path="/tic-tac-toc" element={<Game />}></Route>
               <Route path="/clock" element={<Clock />}></Route>
+              <Route path="/widgets" element={<Widgets />}></Route>
+              <Route path="/microphone" element={<Microphone />}></Route>
             </Routes>
           </Suspense>
         </div>
